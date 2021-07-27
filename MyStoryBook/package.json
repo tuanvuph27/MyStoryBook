@@ -1,15 +1,9 @@
 {
-  "name": "intro-storybook-react-template",
+  "name": "@vupt-story-book/learnstorybook-design-system",
   "version": "0.1.0",
-  "description": "Starter template to get up and running quickly with React and Storybook",
-  "author": "Chromatic <https://chromatic.com/>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chromaui/intro-storybook-react-template"
-  },
-  "bugs": {
-    "url": "https://github.com/chromaui/intro-storybook-react-template/issues"
-  },
+  "description": "Storybook design systems tutorial",
+  "author": "Vu",
+  "repository": "https://github.com/tuanvuph27/MyStoryBook/tree/main/MyStoryBook",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -31,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -53,6 +47,16 @@
       }
     ]
   },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -66,6 +70,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
     "@storybook/addon-actions": "^6.3.0",
     "@storybook/addon-essentials": "^6.3.0",
     "@storybook/addon-knobs": "^6.3.0",
@@ -75,7 +80,10 @@
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.3.0",
     "@storybook/testing-react": "^0.0.17",
+    "auto": "^10.30.0",
+    "cross-env": "^7.0.3",
     "react-test-renderer": "^17.0.2",
     "typescript": "^4.3.5"
-  }
+  },
+  "main": "dist/index.js"
 }
